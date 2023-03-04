@@ -1,3 +1,4 @@
+// https://www.codewars.com/kata/53da3dbb4a5168369a0000fe
 // First Attempt - Mar 2, 2023
 // Refactoring - Mar 3, 20233
 
@@ -6,6 +7,9 @@
 // =============
 
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+// function evenOrOdd(number) {
+// }
 
 
 // ==============
@@ -27,6 +31,7 @@ function evenOrOdd(number) {
         return "Odd"
     }
 }
+
 
 // ==============
 // Tests
