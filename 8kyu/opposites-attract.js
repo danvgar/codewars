@@ -1,4 +1,4 @@
-// Attempt 1 - Mar 3, 2023
+// First Attempt - Mar 3, 2023
 
 // =============
 // Problem
