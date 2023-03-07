@@ -1,0 +1,47 @@
+// https://www.codewars.com/kata/5168bb5dfe9a00b126000018
+// First Attempt - Mar 5, 2023
+
+// =============
+// Problem
+// =============
+
+// Complete the solution so that it reverses the string passed into it.
+
+// Example
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+
+
+// function solution(str){
+
+// }
+
+
+// ==============
+// Solution 1
+// ==============
+
+function solution(str){
+    for(let i = 0; i < str.length; i++){
+        str[i] = str[(str.length - 1) - i]
+    }
+    return str
+}
+
+
+// ==============
+// Tests
+// ==============
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(solution('world'), 'dlrow');
+    assert.strictEqual(solution('hello'), 'olleh');
+    assert.strictEqual(solution(''), '');
+    assert.strictEqual(solution('h'), 'h');
+  });
+});  
