@@ -14,26 +14,36 @@
 // Example
 // For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
 
+// function countPositivesSumNegatives(input) {
+//     // your code here
+// }
+
 
 // ==============
 // Solution 1
 // ==============
 
-// function countPositivesSumNegatives(input) {
-//     // your code here
-// }
-
 function countPositivesSumNegatives(input) {
-    let count = 0
-    let sum = 0
-    
-    let noZeroes = input.filter(value => value >= 0)
-    noZeroes.forEach(x => x > 0 ? count += 1 : sum += x)
-    
-    let output = [count, sum]
+    let count
+    let sum
+    let output = []
+    if (!Array.isArray(input) || input.length === 0) {
+        return output
+    } else {
+        count = 0
+        sum = 0
+        
+        let posArray = input.filter(value => value > 0)
+        count = posArray.length
+        
+        let negArray = input.filter(value => value < 0)
+        sum = negArray.reduce( (acc,a) => acc + a, 0)
+        
+        output = [count, sum]
+        return output
+    }
 }
 
-// need to revisit
 
 // ==============
 // Tests
