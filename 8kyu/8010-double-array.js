@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/57f781872e3d8ca2a000007e/train/javascript
 // First Attempt - Mar 9, 2023
+// Refactoring - Mar 14, 2023
 
 // =============
 // Problem
@@ -15,6 +16,7 @@
 
 // }
 
+
 // ==============
 // Solution 1
 // ==============
@@ -23,6 +25,15 @@ function maps(x){
     let doubledArray = []
     x.forEach((a,i) => doubledArray.push(a*2))
     return doubledArray
+}
+
+// ==============
+// Solution 2
+// ==============
+
+function maps(x){
+    x = x.map(a => a*2)
+    return x
 }
 
 
