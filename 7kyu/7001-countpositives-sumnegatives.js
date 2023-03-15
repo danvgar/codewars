@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/javascript
 // First Attempt - Mar 12, 2023
+// Second Attempt - Mar 14, 2023
 
 // =============
 // Problem
