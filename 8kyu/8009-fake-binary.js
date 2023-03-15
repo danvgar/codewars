@@ -11,7 +11,6 @@
 // Note: input will never be an empty string
 
 // function fakeBin(x){
-
 // }
 
 // ==============

@@ -15,14 +15,15 @@
 
 // if bmi > 30 return "Obese"
 
+// function bmi(weight, height) {
+//     return "";
+// }
+
 
 // ==============
 // Solution 1
 // ==============
 
-// function bmi(weight, height) {
-//     return "";
-// }
 
 function bmi(weight, height) {
     let bmi = weight / height ** 2

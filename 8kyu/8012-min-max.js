@@ -16,11 +16,6 @@
 // Notes
 // You may consider that there will not be any empty arrays/vectors.
 
-
-// ==============
-// Solution 1
-// ==============
-
 // var min = function(list){
 
 //     return list[0];
@@ -30,6 +25,10 @@
 
 //     return list[0];
 // }
+
+// ==============
+// Solution 1
+// ==============
 
 var min = function(list){
     let min = list[0]    

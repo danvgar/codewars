@@ -9,14 +9,14 @@
 
 // Note: Empty arrays should return 0.
 
+// function findAverage(array) {
+//     return 0;
+//   }
+
 
 // ==============
 // Solution 1
 // ==============
-
-// function findAverage(array) {
-//     return 0;
-//   }
 
 function findAverage(array) {
     let avg = 0

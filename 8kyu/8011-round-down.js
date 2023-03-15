@@ -19,14 +19,14 @@
 
 // time = 11.8--> litres = 5
 
+// function litres(time) {
+//     return 0;
+// }
+
 
 // ==============
 // Solution 1
 // ==============
-
-// function litres(time) {
-//     return 0;
-// }
 
 function litres(time) {
     const LPH = 0.5         // LPH = liters per hour
