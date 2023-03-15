@@ -22,10 +22,10 @@
 // ==============
 
 function solution(str){
-    for(let i = 0; i < str.length; i++){
-        str[i] = str[(str.length - 1) - i]
-    }
-    return str
+  str = str.split("")
+  str = str.reverse()
+  str = str.join("")
+  return str
 }
 
 
