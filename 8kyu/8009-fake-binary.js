@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/57eae65a4321032ce000002d/train/javascript
 // First Attempt - Mar 8, 2023
+// Refactoring - Mar 14, 2023
 
 // =============
 // Problem
@@ -33,6 +34,17 @@ function fakeBin(x){
     return newString
 } 
 
+// ==============
+// Solution 2
+// ==============
+
+function fakeBin(x) {
+    let newArray = x.split("")        
+    newArray = newArray.map(a => parseInt(a,10))
+    newArray = newArray.map(a => (a < 5) ? a = 0 : a = 1)
+    let newBin = newArray.join("")
+    return `${newBin}`
+} 
 
 // ==============
 // Tests
