@@ -25,19 +25,10 @@
 // ==============
 
 function disemvowel(str) {
-    console.log(`Original String: ${str}`)
-
     str = str.split("")
-    console.log(`Split String: ${str}`)
-
-    // str = str.forEach( (a,i) => a === "a" || a === "e" || a === "i" || a === "o" || a === "u" ? str.splice(i,1) : a = a)
     str = str.filter(a => a !== "a" && a !== "e" && a !== "i" && a !== "o" && a !== "u")
     str = str.filter(a => a !== "A" && a !== "E" && a !== "I" && a !== "O" && a !== "U")
-    console.log(`Filtered String: ${str}`)
-    
     str = str.join("")
-    console.log(`Joined String: ${str}`)
-
     return str;
 }
 
