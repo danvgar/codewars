@@ -14,7 +14,7 @@
 
 // function check(a, x) {
 //     // your code here
-//   }
+// }
 
 // ==============
 // Solution 1

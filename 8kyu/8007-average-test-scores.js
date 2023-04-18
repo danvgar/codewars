@@ -1,6 +1,7 @@
 // https://www.codewars.com/kata/5601409514fc93442500010b/train/javascript
 // First Attempt - Mar 7, 2023
-// Refactoring - Apr 18, 2023
+// Refactoring 2 - Apr 18, 2023
+// Refactoring 3 - Apr 18, 2023 
 
 // =============
 // Problem
@@ -55,6 +56,15 @@ function betterThanAverage(classPoints, yourPoints) {
   let avgPoints = total / classPoints.length
   
   return yourPoints > avgPoints
+}
+
+
+// ==============
+// Solution 3
+// ==============
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce( (acc, c) => acc + c, 0) / classPoints.length
 }
 
 
