@@ -1,6 +1,7 @@
 // https://www.codewars.com/kata/5168bb5dfe9a00b126000018
 // First Attempt - Mar 6, 2023
 // Second Attempt - Mar 14, 2023
+// Refactoring - Apr 18, 2023
 
 // =============
 // Problem
@@ -26,6 +27,15 @@ function solution(str){
   str = str.reverse()
   str = str.join("")
   return str
+}
+
+
+// ==============
+// Solution 2
+// ==============
+
+function solution(str){
+  return str.split("").reverse().join("")
 }
 
 

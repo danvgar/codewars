@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5265326f5fda8eb1160004c8
 // First Attempt - Mar 5, 2023
+// Refactored - Apr 18, 2023
 
 // =============
 // Problem
@@ -20,7 +21,15 @@
 // ==============
 
 function numberToString(num) {
-    return `${num}`
+  return `${num}`
+}
+
+// ==============
+// Solution 1
+// ==============
+
+function numberToString(num) {
+  return String(num)
 }
 
 

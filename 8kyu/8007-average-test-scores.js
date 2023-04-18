@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5601409514fc93442500010b/train/javascript
 // First Attempt - Mar 7, 2023
+// Refactoring - Apr 18, 2023
 
 // =============
 // Problem
@@ -17,7 +18,7 @@
 
 // function betterThanAverage(classPoints, yourPoints) {
 //     // Your code here
-//   }
+// }
 
 
 // ==============
@@ -25,22 +26,36 @@
 // ==============
 
 function betterThanAverage(classPoints, yourPoints) {
-    let total = 0
-    
-    classPoints.push(yourPoints)
-    
-    classPoints.forEach((x,i) => total += x)
-    
-    let avgPoints = total / classPoints.length
-    
-    if (yourPoints > avgPoints) {
-        return true
-    } else {
-        return false
-    }
+  let total = 0
+  
+  classPoints.push(yourPoints)
+  
+  classPoints.forEach((x,i) => total += x)
+  
+  let avgPoints = total / classPoints.length
+  
+  if (yourPoints > avgPoints) {
+    return true
+  } else {
+    return false
+  }
 }
 
 // #firsttrryyyyyyyyyy!!
+
+
+// ==============
+// Solution 2
+// ==============
+
+function betterThanAverage(classPoints, yourPoints) {
+  classPoints.push(yourPoints)
+  let total = classPoints.reduce((acc,c) => acc + c, 0)
+  
+  let avgPoints = total / classPoints.length
+  
+  return yourPoints > avgPoints
+}
 
 
 // ==============
