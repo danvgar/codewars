@@ -11,7 +11,7 @@ Repository of daily [Codewars](https://www.codewars.com/) challenges
 
 **Tech Used:** </br><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" height="25" width="25"/>
 
-Challenging myself to push at least one solution daily, while adding refactoring and optimized algorithms into my daily [Anki flashcards](https://apps.ankiweb.net/).
+Challenge to push at least one solution daily, while frequently going back to refactor and add optimized algorithms into daily [Anki flashcards](https://apps.ankiweb.net/) bank.
 
 ## Optimizations
 
