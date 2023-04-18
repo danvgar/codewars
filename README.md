@@ -9,7 +9,7 @@ Repository of daily [Codewars](https://www.codewars.com/) challenges
 
 ## How It's Made:
 
-**Tech Used:** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" height="50" width="50"/>
+**Tech Used:** </br><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" height="25" width="25"/>
 
 Challenging myself to push at least one solution daily, while adding refactoring and optimized algorithms into my daily [Anki flashcards](https://apps.ankiweb.net/).
 
