@@ -1,5 +1,4 @@
-# Codewars: [danvgar](https://www.codewars.com/users/danvgar)
-Repository of daily [Codewars](https://www.codewars.com/) challenges
+Repository of daily [Codewars](https://www.codewars.com/) challenges for [danvgar](https://www.codewars.com/users/danvgar)
         
 > Codewars is a platform that helps you learn, train, and improve your coding skills by solving programming tasks of many types and difficulty levels. Ranks are used to indicate the proficiency of users and the difficulty of Kata. There are two classes of ranks, Kyu and Dan, which are divided in 8 levels each. 
 
