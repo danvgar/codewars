@@ -20,15 +20,16 @@
 //     //...
 // };
 
+
 // ==============
 // Solution 1
 // ==============
 
 String.prototype.toJadenCase = function () {
-    return this.split(" ").map(a => a.split(""))
+    return this.split(" ").map(a => a[0].toUpperCase() + a.slice(1)).join(" ")              
 }
 
-// need to revisit
+// revisit for understanding and add to ANKI
 
 
 // ==============
