@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/javascript
 // First Attempt - Apr 15, 2023
+// Second Solution - May 6, 2023
 
 
 // =============
@@ -24,6 +25,15 @@ function booleanToString(b){
 }
 
 // #firsttry
+
+
+// ==============
+// Solution 2 
+// ==============
+
+function booleanToString(b){
+    return String(b)
+}
 
 
 // ==============
