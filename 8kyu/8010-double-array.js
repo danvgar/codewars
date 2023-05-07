@@ -26,6 +26,7 @@ function maps(x){
     return doubledArray
 }
 
+
 // ==============
 // Solution 2
 // ==============
