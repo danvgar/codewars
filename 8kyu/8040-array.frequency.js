@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5865918c6b569962950002a1/train/javascript
 // First Attempt - Apr 27, 2023
+// Second Solution - May 6, 2023
 
 
 // =============
@@ -42,6 +43,15 @@ function strCount(str, letter) {
         }   
         return count
     }
+}
+
+
+// ==============
+// Solution 2
+// ==============
+
+function strCount(str, letter) {
+    return str.split("").filter(a => a === letter).length
 }
 
 
