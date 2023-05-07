@@ -31,17 +31,10 @@
 function countSheeps(arrayOfSheep) {
     let count = 0
     if (!Array.isArray(arrayOfSheep) || arrayOfSheep === 0) {
-        // console.log(`Is it an array? : ${Array.isArray(arrayOfSheep)}`)
-        // console.log(`Is the array empty? ${arrayOfSheep === 0}`)
-        // console.log(`Count: ${count}`)
         return count
     } else {
         filteredArray = arrayOfSheep.filter(a => a === true)
-        // console.log(`Else Count: ${count}`)
-
         count = filteredArray.length
-        // console.log(`Filtered Array: ${filteredArray}`)
-        // console.log(`Filtered Count: ${count}`)
         return count
     }
 }
