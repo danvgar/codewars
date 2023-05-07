@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/57a0885cbb9944e24c00008e/train/javascript
 // First Attempt - Apr 4, 2023
+// Second Solution - May 6, 2023
 
 
 // =============
@@ -20,7 +21,14 @@ function removeExclamationMarks(s) {
     return s.split("").filter(a => a !== "!").join("")
 }
 
-// #firsttry
+
+// ==============
+// Solution 2
+// ==============
+
+function removeExclamationMarks(s) {
+    return s.split("!").join("")
+}
 
 
 // ==============
