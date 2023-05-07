@@ -1,5 +1,6 @@
-// https://www.codewars.com/kata/55685cd7ad70877c23000102
+// https://www.codewars.com/kata/55685cd7ad70877c23000102/train/javascript
 // First Attempt - Mar 22, 2023
+// Second Solutoin - May 6, 2023
 
 // =============
 // Problem
@@ -30,6 +31,15 @@ function makeNegative(num) {
     } else if (num >= 0) {
         return num * -1
     }
+}
+
+
+// ==============
+// Solution 2
+// ==============
+
+function makeNegative(num) {
+    return num > 0 ? -num : num
 }
 
 
