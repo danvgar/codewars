@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/57f780909f7e8e3183000078/train/javascript
 // First Attempt - Mar 15, 2023
+// Second Attempt - May 6, 2023
 
 // =============
 // Problem
@@ -18,9 +19,18 @@
 // ==============
 
 function grow(x){
-    let product = 1
-    x.forEach(a => product *= a)
-    return product
+  let product = 1
+  x.forEach(a => product *= a)
+  return product
+}
+
+
+// ==============
+// Solution 2
+// ==============
+
+function grow(x){
+  return x.reduce((acc,c) => acc * c, 1)
 }
 
 
