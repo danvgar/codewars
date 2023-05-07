@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/577a98a6ae28071780000989/train/javascript
 // First Attempt - Mar 11, 2023
+// Second Solution - May 6, 2023
 
 // =============
 // Problem
@@ -41,6 +42,20 @@ var max = function(list){
     list.forEach(x => x >= max ? max = x : max = max)
     return max
 }
+
+
+// ==============
+// Solution 2
+// ==============
+
+var min = function(list){
+    return Math.min(...list)
+}
+
+var max = function(list){
+    return Math.max(...list)
+}
+
 
 // ==============
 // Tests
