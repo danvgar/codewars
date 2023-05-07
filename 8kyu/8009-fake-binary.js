@@ -34,6 +34,7 @@ function fakeBin(x){
     return newString
 } 
 
+
 // ==============
 // Solution 2
 // ==============
@@ -45,6 +46,7 @@ function fakeBin(x) {
     let newBin = newArray.join("")
     return `${newBin}`
 } 
+
 
 // ==============
 // Tests
