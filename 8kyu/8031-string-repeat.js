@@ -1,5 +1,7 @@
 // https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/javascript
 // First Attempt - Apr 11, 2023
+// Second Attempt - May 6, 2023
+
 
 
 // =============
@@ -30,6 +32,16 @@ function repeatStr (n, s) {
 }
 
 // #firsttry
+
+
+// ==============
+// Solution 2
+// ==============
+
+function repeatStr (n, s) {
+    return s.repeat(n)
+}
+
 
 // ==============
 // Tests
