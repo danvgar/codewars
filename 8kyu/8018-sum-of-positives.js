@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5715eaedb436cf5606000381/train/javascript
 // First Attempt - Mar 19, 2023
+// Refactoring - May 6, 2023
 
 // =============
 // Problem
@@ -20,9 +21,7 @@
 // ==============
 
 function positiveSum(arr) {  
-    let sum = 0
-    sum = arr.filter(a => a > 0).reduce((acc, c) => acc + c, 0)
-    return sum
+    return arr.filter(a => a > 0).reduce((acc, c) => acc + c, 0)
 }
 
 
