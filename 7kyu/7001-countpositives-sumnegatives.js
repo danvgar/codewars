@@ -1,6 +1,7 @@
 // https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/javascript
 // First Attempt - Mar 12, 2023
 // Second Attempt - Mar 14, 2023
+// Second Solution - May 6, 2023
 
 // =============
 // Problem
@@ -43,6 +44,15 @@ function countPositivesSumNegatives(input) {
         output = [count, sum]
         return output
     }
+}
+
+
+// ==============
+// Solution 2
+// ==============
+
+function countPositivesSumNegatives(input) {
+        return input && input.length ? : [input.filter(a => a > 0).length, input.filter(a => a < 0).reduce( (acc,c) => acc + c, 0)] : []
 }
 
 
