@@ -15,7 +15,7 @@
 // Good Luck!
 
 // function doubleChar(str) {
-//     // Your code here
+//     // Your code here    
 // }
 
 // P: input is a string data type
