@@ -40,20 +40,17 @@ function expandedForm(num) {
     while(i < numLength) {
         if(numString[i] === "0") {
             i++
-        } else if(i === numLength - 1) {
+        } else if(i === 0) {
             numExpanded += numString[i] + "0".repeat(numLength - i - 1)
             i++
         } else {
-            numExpanded += numString[i] + "0".repeat(numLength - i - 1) + " + "
+            numExpanded += " + " + numString[i] + "0".repeat(numLength - i - 1)    
             i++
         }
-    }
-    
+    }   
     console.log(numExpanded)
     return numExpanded
 }
-
-// need to revisit
 
 
 // ==============
