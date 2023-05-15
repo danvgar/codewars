@@ -62,5 +62,3 @@ describe("Fixed Tests", () => {
         assert.strictEqual(past(1,0,0),3600000)
     });
 });
-}
-});
