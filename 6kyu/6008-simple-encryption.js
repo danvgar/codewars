@@ -112,7 +112,7 @@ function decrypt(encryptedText, n) {
             
         //     decryptedText = oddArray.join("") + evenArray.join("")
         //     console.log("New Encrypted Text Number " + i + ": " + decryptedText)
-        }
+        // }
         console.log(`Final Text: ${decryptedText} \n \n`)
         return decryptedText
     }
