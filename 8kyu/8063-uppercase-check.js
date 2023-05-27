@@ -29,7 +29,7 @@
 // ==============
 
 String.prototype.isUpperCase = function() {
-  return this.toUpperCase ==== this 
+  return this.toUpperCase === this 
 }
 
 // revisit
