@@ -1,4 +1,3 @@
-@@ -1,50 +0,0 @@
 // https://www.codewars.com/kata/5a00e05cc374cb34d100000d/train/javascript
 // First Attempt - June 2, 2023
 
