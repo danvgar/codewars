@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5672a98bdbdd995fad00000f/train/javascript
 // First Attempt - May 25, 2023
+// Second Attempt - June 17, 2023
 
 
 // =============
@@ -24,10 +25,19 @@
 // ==============
 
 const rps = (p1, p2) => {
-  (p1 === "paper" && p2 === "rock") ? "Player 1 won!" : (p1 === "rock" && p2 === "rock")
-};
-
-// revisit
+  switch(true) {
+    case (p1 === "rock" && p2 === "scissors"):
+    case (p1 === "scissors" && p2 === "paper"):
+    case (p1 === "paper" && p2 === "rock"):
+      return "Player 1 won!"
+    case (p2 === "rock" && p1 === "scissors"):
+    case (p2 === "scissors" && p1 === "paper"):
+    case (p2 === "paper" && p1 === "rock"):
+      return "Player 2 won!"
+    default: 
+      return "Draw!"
+  }
+}
 
 
 // ==============
