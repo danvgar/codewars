@@ -34,8 +34,9 @@
 // ==============
 
 function sumArray(array) {
-  if(array === null || array.length < 3) {
-    console.log(`Ending Array: 0`)
+  if(array === null || array === undefined) {
+    return 0
+  } else if (array.length < 3){
     return 0
   }
   array = array.sort( (a,b) => a - b)
