@@ -1,21 +1,19 @@
-// https://www.codewars.com/kata/5a023c426975981341000014/train/javascript
-// First Attempt - June 27, 2023
+// https://www.codewars.com/kata/58649884a1659ed6cb000072
+// First Attempt - June 30, 2023
 
 
 // =============
 // Problem
 // =============
 
-// You are given two interior angles (in degrees) of a triangle.
+// You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
 
-// Write a function to return the 3rd.
+// Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
 
-// Note: only positive integers will be tested.
+// For example, when the input is green, output should be yellow.
 
-// https://en.wikipedia.org/wiki/Triangle
-
-// function otherAngle(a, b) {
-//   return 0;
+// function updateLight(current) {
+//   //your code here!
 // }
 
 
@@ -23,8 +21,17 @@
 // Solution 1
 // ==============
 
-function otherAngle(a, b) {
-  return 180 - a - b
+function updateLight(current) {
+  switch(current) {
+    case "green": 
+    return "yellow";
+
+    case "yellow":
+    return "red" ;
+
+    case "red":
+    return "green";
+  }
 }
 
 
@@ -34,13 +41,12 @@ function otherAngle(a, b) {
 
 const chai = require("chai");
 const assert = chai.assert;
-chai.config.truncateThreshold = 0;
+chai.config.truncateThreshold=0;
 
-describe("Tests", () => {
-  it("test", () => {
-    assert.strictEqual(otherAngle(30, 60), 90);
-    assert.strictEqual(otherAngle(60, 60), 60);
-    assert.strictEqual(otherAngle(43, 78), 59);
-    assert.strictEqual(otherAngle(10, 20), 150);
+describe("Basic tests", () => {
+  it("Testing for fixed tests", () => {
+    assert.strictEqual(updateLight("green"), "yellow");
+    assert.strictEqual(updateLight("yellow"), "red");
+    assert.strictEqual(updateLight("red"), "green");
   });
 });
