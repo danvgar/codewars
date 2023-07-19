@@ -47,7 +47,7 @@ function formatDuration (input) {
     const ONE_HR = 3600             // 1 hr = 60 min = 3600 s
     const ONE_DAY = 86400           // 1 day = 24 hr = 1440 min = 86400 s
     const ONE_YR = 3156000          // 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
-
+    
     const TWO_MIN = 2 * ONE_MIN     // 2 min = 120 s
     const TWO_HR = 2 * ONE_HR       // 2 hr = 7200 s
     const TWO_DAY = 2 * ONE_DAY     // 2 day = 172800 s
@@ -70,31 +70,32 @@ function formatDuration (input) {
             return result
         }
         
-    // less than an hour
+        // less than an hour
     } else if (input < TWO_MIN) {
         // single minute, no seconds
         if (input < TWO_MIN && input % ONE_MIN === 0) {
             let result = `${Math.floor(input / ONE_MIN)} minute`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
-
-        // single minute, some seconds
+            
+            // single minute, some seconds
         } else  if(input < TWO_MIN){
             let result = `${Math.floor(input / ONE_MIN)} minutes and ${input % ONE_MIN} seconds`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
-
-        } else  if(input <  {
-            let result = `${Math.floor(input / ONE_MIN)} minute and ${input % ONE_MIN} seconds`
+            
+            // } else  if(input <  {
+            //     let result = `${Math.floor(input / ONE_MIN)} minute and ${input % ONE_MIN} seconds`
+            //     console.log(`Less than 1 hr: ${result} \n`)
+            //     return result
+            // }
+            
+        } else if (input < ONE_DAY) { // less than a day
+            let result = `${Math.floor(input / ONE_MIN)} minutes and ${input % ONE_MIN} seconds`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
+            
         }
-        
-    } else if (input < ONE_DAY) { // less than a day
-        let result = `${Math.floor(input / ONE_MIN)} minutes and ${input % ONE_MIN} seconds`
-        console.log(`Less than 1 hr: ${result} \n`)
-        return result
-        
     }
 }
 
