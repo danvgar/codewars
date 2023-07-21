@@ -36,21 +36,25 @@
 
 function points(games) {
   let total = 0
+  // console.log(`Original Array: ${games}`)    
+  
   for(let i = 0; i < games.length; i++) {
-    if(Number(games[i].charAt(0)) > Number(games[i].charAt(3))) {
+    // console.log(`Score: ${games[i]}`)    
+    if(Number(games[i].charAt(0)) > Number(games[i].charAt(2))) {
       total += 3
-    } else if(Number(games[i].charAt(0)) < Number(games[i].charAt(3))) {
+    } else if(Number(games[i].charAt(0)) < Number(games[i].charAt(2))) {
       total += 0
-    } else if(Number(games[i].charAt(0)) === Number(games[i].charAt(3))) {
+    } else if(Number(games[i].charAt(0)) === Number(games[i].charAt(2))) {
       total += 1
     }
-    console.log(`Total at i: ${i}: ${total}`)
+    // console.log(`x: ${Number(games[i].charAt(0))}`)    
+    // console.log(`y: ${Number(games[i].charAt(2))}`)    
+    // console.log(`Total at ${i}: ${total}`)
   }
-  console.log(`Final Total: ${total} \n`)
-
+  // console.log(`Final Total: ${total} \n`)
+  
   return total
 }
-
 
 // ==============
 // Tests
