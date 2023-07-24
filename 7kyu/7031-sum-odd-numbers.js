@@ -36,6 +36,7 @@
 // ==============
 
 function rowSumOddNumbers(n) {
+  return n * n * n
 }
 
 // Apparently I don't know math.
