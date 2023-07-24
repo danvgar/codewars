@@ -36,6 +36,7 @@
 //   // your code
 // }
 
+
 // P: input will be a starting population (positive integer), the percent increase per year (as an integer, null, or float), the additional new inhabitants per year (as positive integer), and the final population we are trying to determine the amount of years it will take to reach. 
 // R: output will be the number of integer years it will take (at minimum) to meet the given population
 // E: given 1000 initial population, 2% increase as well as additional 50 inhabitants per year, and a goal of 1200 inhabitants, it will take 3 years to reach the goal population as ((1000 * 1.02) + 50) iterated 3 times becomes 1213 inhabitants. 
