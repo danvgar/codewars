@@ -34,7 +34,7 @@
 const binaryArrayToNumber = arr => {
   // console.log(arr)
   let num = arr.join("")
-  console.log(num)
+  // console.log(num)
   // console.log(typeof num)
   // console.log(Number(num).toString(2))
   // console.log(`\n`)
