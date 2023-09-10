@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/javascript
 // First Attempt - June 3, 2023
+// Second Attempt - Sept 9, 2023
 
 
 // =============
@@ -31,11 +32,21 @@
 // Solution 1
 // ==============
 
-function duplicateEncode(word){
-    // ...
+function duplicateEncode(word) {
+  console.log(word)
+  word = word.toLowerCase()
+  arrWord = word.split("")
+  for (let i = 0; i < word.length; i++) {
+    if (word.indexOf(word[i]) === word.lastIndexOf(word[i])) {
+      arrWord[i] = "("
+      console.log(word)
+    } else {
+      arrWord[i] = ")"
+    }
+  } 
+  return arrWord.join("")
 }
 
-// revisit
 
 
 // ==============
@@ -44,13 +55,13 @@ function duplicateEncode(word){
 
 const chai = require("chai");
 const assert = chai.assert;
-chai.config.truncateThreshold=0;
+chai.config.truncateThreshold = 0;
 
 describe("Duplicate Encoder", () => {
   it("Testing for fixed tests", () => {
-    assert.strictEqual(duplicateEncode("din"),"(((");
-    assert.strictEqual(duplicateEncode("recede"),"()()()");
-    assert.strictEqual(duplicateEncode("Success"),")())())","should ignore case");
-    assert.strictEqual(duplicateEncode("(( @"),"))((");
+    assert.strictEqual(duplicateEncode("din"), "(((");
+    assert.strictEqual(duplicateEncode("recede"), "()()()");
+    assert.strictEqual(duplicateEncode("Success"), ")())())", "should ignore case");
+    assert.strictEqual(duplicateEncode("(( @"), "))((");
   });
 });
