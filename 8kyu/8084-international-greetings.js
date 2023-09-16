@@ -67,6 +67,10 @@ function greet(language) {
     swedish: 'Valkommen',
     welsh: 'Croeso'
   }
+  if(!obj[language]) {
+    return obj.english
+  }
+  return obj[language]
 }
 
 
