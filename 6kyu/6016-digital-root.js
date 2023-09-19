@@ -25,12 +25,10 @@
 // ==============
 
 function digitalRoot(n) {
-  function accumulator(n) {
-    let sum = 0
-    n = n.toString().split("").reduce((acc, c) => {
-    +acc + +c
-    }, 0)
-  }
+  do {
+    n = n.toString().split("").reduce((acc, c) => +acc + +c, 0)
+  } while (n.toString().length !== 1)
+  return n
 }
 
 
