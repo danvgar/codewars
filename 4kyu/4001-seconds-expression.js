@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/52742f58faf5485cae000b9a/train/javascript
 // First Attempt - Apr 1, 2023
+// Second Attempt - Sept 20, 2023
 
 
 // =============
@@ -42,34 +43,34 @@
 // Solution 1
 // ==============
 
-function formatDuration (input) {
+function formatDuration(input) {
     const ONE_MIN = 60              // 1 min = 60 s
     const ONE_HR = 3600             // 1 hr = 60 min = 3600 s
     const ONE_DAY = 86400           // 1 day = 24 hr = 1440 min = 86400 s
     const ONE_YR = 3156000          // 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
-    
+
     const TWO_MIN = 2 * ONE_MIN     // 2 min = 120 s
     const TWO_HR = 2 * ONE_HR       // 2 hr = 7200 s
     const TWO_DAY = 2 * ONE_DAY     // 2 day = 172800 s
     const TWO_YEAR = 2 * ONE_DAY    // 2 yr = 6307200 s
-    
+
     console.log(`Initial Value: ${input} seconds`)
-    
+
     // less than a minute
-    if(input < ONE_MIN) {
+    if (input < ONE_MIN) {
         // single second
-        if(input < 2) {
+        if (input < 2) {
             let result = `${input} second`
             console.log(`Less than 1 min: ${input} second \n`)
             return result
-            
+
             //multiple seconds
         } else {
             let result = `${input} seconds`
             console.log(`Less than 1 min: ${input} seconds \n`)
             return result
         }
-        
+
         // less than an hour
     } else if (input < TWO_MIN) {
         // single minute, no seconds
@@ -77,27 +78,82 @@ function formatDuration (input) {
             let result = `${Math.floor(input / ONE_MIN)} minute`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
-            
+
             // single minute, some seconds
-        } else  if(input < TWO_MIN){
+        } else if (input < TWO_MIN) {
             let result = `${Math.floor(input / ONE_MIN)} minutes and ${input % ONE_MIN} seconds`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
-            
+
             // } else  if(input <  {
             //     let result = `${Math.floor(input / ONE_MIN)} minute and ${input % ONE_MIN} seconds`
             //     console.log(`Less than 1 hr: ${result} \n`)
             //     return result
             // }
-            
+
         } else if (input < ONE_DAY) { // less than a day
             let result = `${Math.floor(input / ONE_MIN)} minutes and ${input % ONE_MIN} seconds`
             console.log(`Less than 1 hr: ${result} \n`)
             return result
-            
+
         }
     }
 }
+
+
+// ==============
+// Solution 2
+// ==============
+
+
+function formatDuration(seconds) {
+    // 1 min = 60 s
+    // 1 hr = 60 min = 3600 s
+    // 1 day = 24 hr = 1440 min = 86400 s
+    // 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
+    
+    // 2 min = 120 s
+    // 2 hr = 7200 s
+    // 2 day = 172800 s
+    // 2 yr = 6307200 s
+    let yy = 0
+    let dd = 0
+    let hh = 0
+    let mm = 0
+    let ss = seconds
+
+    let floorSeconds = Math.floor(ss / 60)
+    let floorMinutes = Math.floor(ss / 3600)
+    let floorHours = Math.floor(ss / 86400)
+    let floorDays = Math.floor(ss / 31536000)
+
+    if (ss >= 31536000) {
+        ss = ss % 60
+        mm = floorSeconds % 60
+        hh = hh % 3600
+        dd = ss % 31536000
+        yy = floorDays
+    } else if (ss >= 86400) {
+        ss = ss % 60
+        mm = floorSeconds % 60
+        hh = hh % 3600
+        dd = floorHours
+    } else if (ss >= 3600) {
+        ss = ss % 60
+        mm = floorSeconds % 60
+        hh = floorMinutes
+    } else if (ss >= 60) {
+        ss = ss % 60
+        mm = floorSeconds
+    }
+
+    return `${yy} years, ${dd} days, ${hh} hours, ${mm} minutes, ${ss} seconds`
+}
+
+formatDuration(60)
+formatDuration(3600)
+formatDuration(86400)
+formatDuration(3153600)
 
 
 
