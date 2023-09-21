@@ -106,13 +106,13 @@ function formatDuration(input) {
 // ==============
 
 
-function formatDuration(seconds) {
-    // 1 min = 60 s
-    // 1 hr = 60 min = 3600 s
-    // 1 day = 24 hr = 1440 min = 86400 s
-    // 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
+// 1 min = 60 s
+// 1 hr = 60 min = 3600 s
+// 1 day = 24 hr = 1440 min = 86400 s
+// 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
 
-    if(seconds === 0) {
+function formatDuration(seconds) {
+    if (seconds === 0) {
         return `now`
     }
 
@@ -122,50 +122,18 @@ function formatDuration(seconds) {
     let mm = 0
     let ss = seconds
 
-    let floorSeconds = Math.floor(ss / 60)
-    let floorMinutes = Math.floor(ss / 3600)
-    let floorHours = Math.floor(ss / 86400)
-    let floorDays = Math.floor(ss / 31536000)
-
-    console.log(floorSeconds)
-    console.log(floorMinutes)
-    console.log(floorHours)
-    console.log(floorDays)
-    console.log(floorSeconds / 60)
-    console.log(floorMinutes / 60)
-    console.log(floorHours / 60)
-    console.log(floorDays / 60)
-    console.log(floorSeconds / 3600)
-    console.log(floorMinutes / 3600)
-    console.log(floorHours / 3600)
-    console.log(floorDays / 3600)
-    console.log(floorSeconds / 86400)
-    console.log(floorMinutes / 86400)
-    console.log(floorHours / 86400)
-    console.log(floorDays / 86400)
-
-
-
     // the math part
-    if (ss >= 31536000) {
-        ss = ss % 60
-        mm = floorSeconds % 60
-        hh = ss % 3600
-        dd = ss % 31536000
-        yy = floorDays
-    } else if (ss >= 86400) {
-        ss = ss % 60
-        mm = floorSeconds % 60
-        hh = hh % 3600
-        dd = floorHours
-    } else if (ss >= 3600) {
-        ss = ss % 60
-        mm = floorSeconds % 60
-        hh = floorMinutes
-    } else if (ss >= 60) {
-        ss = ss % 60
-        mm = floorSeconds
-    }
+    yy = Math.floor(ss / 31536000)
+    ss -= (yy * 31536000)
+
+    dd = Math.floor(ss / 86400)
+    ss -= (dd * 86400)
+
+    hh = Math.floor(ss / 3600)
+    ss -= (hh * 3600)
+
+    mm = Math.floor(ss / 60)
+    ss -= (mm * 60)
 
     // the string part
     let arr = []
@@ -175,7 +143,6 @@ function formatDuration(seconds) {
     } else if (yy === 1) {
         arr.push(`${yy} year`)
     }
-
 
     if (dd > 1) {
         arr.push(`${dd} days`)
@@ -201,20 +168,16 @@ function formatDuration(seconds) {
         arr.push(`${ss} second`)
     }
 
-    // console.log(arr)
     let str = arr.join(", ")
     if (arr.length > 1) {
         let lastCommaIndex = str.lastIndexOf(", ")
-        // console.log(lastCommaIndex)
         str = str.substring(0, lastCommaIndex) + ' and' + str.substring(lastCommaIndex + 1);
-        // console.log(str)
-    } else {
     }
 
-    // return str
-    return `${yy} years, ${dd} days, ${hh} hours, ${mm} minutes, and ${ss} seconds`
+    return str
 }
 
+// return `${yy} years, ${dd} days, ${hh} hours, ${mm} minutes, and ${ss} seconds`
 formatDuration(60)
 formatDuration(3600)
 formatDuration(86400)
