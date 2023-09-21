@@ -111,11 +111,11 @@ function formatDuration(seconds) {
     // 1 hr = 60 min = 3600 s
     // 1 day = 24 hr = 1440 min = 86400 s
     // 1 yr = 365 day = 8760 hr = 525600 min = 31536000 s
-    
-    // 2 min = 120 s
-    // 2 hr = 7200 s
-    // 2 day = 172800 s
-    // 2 yr = 6307200 s
+
+    if(seconds === 0) {
+        return `now`
+    }
+
     let yy = 0
     let dd = 0
     let hh = 0
@@ -127,10 +127,30 @@ function formatDuration(seconds) {
     let floorHours = Math.floor(ss / 86400)
     let floorDays = Math.floor(ss / 31536000)
 
+    console.log(floorSeconds)
+    console.log(floorMinutes)
+    console.log(floorHours)
+    console.log(floorDays)
+    console.log(floorSeconds / 60)
+    console.log(floorMinutes / 60)
+    console.log(floorHours / 60)
+    console.log(floorDays / 60)
+    console.log(floorSeconds / 3600)
+    console.log(floorMinutes / 3600)
+    console.log(floorHours / 3600)
+    console.log(floorDays / 3600)
+    console.log(floorSeconds / 86400)
+    console.log(floorMinutes / 86400)
+    console.log(floorHours / 86400)
+    console.log(floorDays / 86400)
+
+
+
+    // the math part
     if (ss >= 31536000) {
         ss = ss % 60
         mm = floorSeconds % 60
-        hh = hh % 3600
+        hh = ss % 3600
         dd = ss % 31536000
         yy = floorDays
     } else if (ss >= 86400) {
@@ -147,7 +167,52 @@ function formatDuration(seconds) {
         mm = floorSeconds
     }
 
-    return `${yy} years, ${dd} days, ${hh} hours, ${mm} minutes, ${ss} seconds`
+    // the string part
+    let arr = []
+
+    if (yy > 1) {
+        arr.push(`${yy} years`)
+    } else if (yy === 1) {
+        arr.push(`${yy} year`)
+    }
+
+
+    if (dd > 1) {
+        arr.push(`${dd} days`)
+    } else if (dd === 1) {
+        arr.push(`${dd} day`)
+    }
+
+    if (hh > 1) {
+        arr.push(`${hh} hours`)
+    } else if (hh === 1) {
+        arr.push(`${hh} hour`)
+    }
+
+    if (mm > 1) {
+        arr.push(`${mm} minutes`)
+    } else if (mm === 1) {
+        arr.push(`${mm} minute`)
+    }
+
+    if (ss > 1) {
+        arr.push(`${ss} seconds`)
+    } else if (ss === 1) {
+        arr.push(`${ss} second`)
+    }
+
+    // console.log(arr)
+    let str = arr.join(", ")
+    if (arr.length > 1) {
+        let lastCommaIndex = str.lastIndexOf(", ")
+        // console.log(lastCommaIndex)
+        str = str.substring(0, lastCommaIndex) + ' and' + str.substring(lastCommaIndex + 1);
+        // console.log(str)
+    } else {
+    }
+
+    // return str
+    return `${yy} years, ${dd} days, ${hh} hours, ${mm} minutes, and ${ss} seconds`
 }
 
 formatDuration(60)
