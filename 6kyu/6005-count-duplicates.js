@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/train/javascript
 // First Attempt - Apr 23, 2023
+// Second Attempt - Sept 22, 2023
 
 
 // =============
@@ -26,9 +27,25 @@
 // Solution 1
 // ==============
 
-function duplicateCount(text){
-    
-    console.log(new Set(text.toLowerCase()))
+function duplicateCount(text) {
+    // console.log(`\nInput: ${text}`)
+    text = text.toLowerCase().split("")
+    let duplicates = 0
+    let tempText = ""
+    for (let i = 0; i < text.length; i++) {
+        // console.log(`Current Test: ${text[i]} of ${text}`)
+        tempText = text.filter(char => char === text[i])
+        if (tempText.length > 1) {
+            // console.log(` - Qty of ${tempText[0]} in text: ${tempText.length}`)
+            text = text.filter(char => char !== tempText[0])
+            // console.log(`Filtered tempText: ${tempText}`)
+            duplicates++
+            // console.log(` - Current Duplicates Count: ${duplicates}`)
+            i = 0
+        }
+    }
+    // console.log(`Output: ${duplicates}`)
+    return duplicates
 }
 
 // need to revisit
@@ -45,7 +62,7 @@ describe("Tests", () => {
         assert.strictEqual(duplicateCount(""), 0);
         assert.strictEqual(duplicateCount("abcde"), 0);
         assert.strictEqual(duplicateCount("aabbcde"), 2);
-        assert.strictEqual(duplicateCount("aabBcde"), 2,"should ignore case");
+        assert.strictEqual(duplicateCount("aabBcde"), 2, "should ignore case");
         assert.strictEqual(duplicateCount("Indivisibility"), 1)
         assert.strictEqual(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent")
     });
