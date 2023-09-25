@@ -48,7 +48,6 @@ function duplicateCount(text) {
     return duplicates
 }
 
-// need to revisit
 
 
 // ==============
