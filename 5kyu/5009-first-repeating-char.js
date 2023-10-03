@@ -39,22 +39,28 @@ function firstNonRepeatingLetter(s) {
   // do not want to alter original input, but also want to optimize memory. 
   // case-insensitive: s.toLowerCase()
   // loop through string as array (does this take up more memory?)
+  if (s.length === 1) {
+    return s
+  } else if (s.length === 0) {
+    console.log(`String length is zero: ${s.length === 0}`)
+    return ""
+  }
   for (let i = 0; i < s.length; i++) {
-    if (s.length === 1) {
-      return s[i]
-    } else if (s.length === 0 || i === s.length - 1) {
-      return ""
-    // }
-    // }
-    // if (s.toLowerCase().indexOf(s[i]) === s.toLowerCase().lastIndexOf(s[i]) && i === s.length - 1) {
-    //   console.log(`Output because i = s.lengthh - 1: ${""}`)
-    //   return ""
-    } else if (s.toLowerCase().indexOf(s[i]) === s.toLowerCase().lastIndexOf(s[i])) {
-      console.log(`Output because first equals last: ${s[i]}`)
-      return s[i]
+    let sLower = s.toLowerCase()
+    let allRepeat = true
+    if ((i === sLower.lastIndexOf(sLower[i])) &&& i === s.length - 1) {
+      allRepeat = false
     }
+    if (i === s.length - 1) { // all repeating vs no repeating
+      console.log(`All letters repeat`)
+      return ""
+    } else if ()
+    } else if (i === sLower.lastIndexOf(sLower[i])) {
+    console.log(`Output because ${s[i]} at ${i} equals ${s[i]} at ${sLower.lastIndexOf(sLower[i])}`)
+    return s[i]
   }
 }
+
 // compare indexOf() with lastIndexOf(). if equal, return s[i]
 
 // revisit
