@@ -21,11 +21,16 @@
 // ==============
 
 function findOutlier(integers) {
-  let evens = integers.filter(element => element % 2 === 0)
-  let odds = integers.filter(element => element % 2 === 1)
+  // console.log(`Input: ${integers}`)
+  let evens = integers.filter(element => Math.abs(element % 2) === 0)
+  // console.log(`Evens: ${evens}`)
+  let odds = integers.filter(element => Math.abs(element % 2) === 1)
+  // console.log(`Odds: ${odds}`)
   if (evens.length === 1) {
+    // console.log(`\nOutput: ${evens[0]}`)
     return evens[0]
   } else {
+    // console.log(`\nOutput: ${odds[0]}`)
     return odds[0]
   }
 }
