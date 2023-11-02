@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/54e6533c92449cc251001667/train/javascript
 // First Attempt - May 4, 2023
+// Second Attempt - Nov 1, 2023
 
 
 // =============
@@ -23,25 +24,24 @@
 // Solution 1
 // ==============
 
-var uniqueInOrder = function(iterable){
-    console.log(iterable)
-    if(typeof iterable === `string`) iterable = iterable.split("")
-    console.log(iterable)
-    for(let i = 0; i < iterable.length; i++) {
-        console.log(`\n Current Array: ${iterable}`)
-        console.log(`${iterable[i]} at ${i} -vs- ${iterable[i + 1]} at ${i + 1} `)
-        console.log(`Does ${iterable[i]} = ${iterable[i + 1]}?: ${iterable[i] === iterable[i + 1]}`)
-        if(iterable[i] === iterable[i + 1]){
-            iterable.splice(iterable[i + 1],1)
-            i = 0
-            console.log(`Remove ${iterable[i+1]} at ${i + 1}`)
-            console.log(`New Array: ${iterable}`)
+var uniqueInOrder = function (iterable) {
+    if (!iterable.length) {
+        return []
+    }
+    let arr = [iterable[0]]
+    let lastIndex = arr.length - 1
+
+    for (let i = 1; i < iterable.length; i++) {
+        if (arr[lastIndex] === iterable[i]) {
+            continue
+        } else {
+            arr.push(iterable[i])
+            lastIndex = arr.length - 1
         }
     }
-    return iterable.join("")
-}
 
-// need to revisit
+    return arr
+}
 
 
 // ==============
@@ -50,11 +50,11 @@ var uniqueInOrder = function(iterable){
 
 const chai = require("chai");
 const assert = chai.assert;
-chai.config.truncateThreshold=0;
+chai.config.truncateThreshold = 0;
 
 describe("Tests", () => {
     it("test", () => {
-        assert.deepEqual(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
+        assert.deepEqual(uniqueInOrder('AAAABBBCCDAABBB'), ['A', 'B', 'C', 'D', 'A', 'B'])
     });
 });
 
