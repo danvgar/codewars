@@ -21,8 +21,8 @@
 // Solution 1
 // ============ 
 
-function last(x){
-
+function last(x) {
+  return x.split(" ").sort( (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1) )
 }
 
 
@@ -32,12 +32,12 @@ function last(x){
 
 const chai = require("chai");
 const assert = chai.assert;
-chai.config.truncateThreshold=0;
+chai.config.truncateThreshold = 0;
 
 describe("Sort by Last Char", () => {
   it("Testing for fixed tests", () => {
     assert.deepEqual(last('man i need a taxi up to ubud'), ['a', 'need', 'ubud', 'i', 'taxi', 'man', 'to', 'up']);
-    assert.deepEqual(last('what time are we climbing up the volcano'), ['time', 'are', 'we', 'the', 'climbing', 'volcano', 'up', 'what']); 
-    assert.deepEqual(last('take me to semynak'), ['take', 'me', 'semynak', 'to']);    
+    assert.deepEqual(last('what time are we climbing up the volcano'), ['time', 'are', 'we', 'the', 'climbing', 'volcano', 'up', 'what']);
+    assert.deepEqual(last('take me to semynak'), ['take', 'me', 'semynak', 'to']);
   })
 });
