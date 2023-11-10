@@ -1,6 +1,6 @@
 <img src="https://www.codewars.com/users/danvgar/badges/large">
 
-![Github Readme Codewars](https://codewars-stats-ignacio-cuadra.vercel.app/?username=danvgar)](https://github.com/danvgar/github-readme-codewars
+![Github Readme Codewars](https://codewars-stats-ignacio-cuadra.vercel.app/?username=danvgar)](https://github.com/danvgar/github-readme-codewars)
 
 Repository of daily [Codewars](https://www.codewars.com/) challenges for [danvgar](https://www.codewars.com/users/danvgar)
         
