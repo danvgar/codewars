@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/550498447451fbbd7600041c/train/javascript
 // First Attempt - Apr 6, 2023
+// Second Attempt - Nov 11, 2023
 
 
 // =============
@@ -41,43 +42,55 @@
 
 
 // ==============
+// PREP
+// ==============
+
+// input will be two integer arrays (or two objects??). input may also be an empty array or null, in which case it should return false.
+// will a or b ever be strings as numbers? null or empty elements but not full arrays?
+// confirm only have to check if b is a**2, and not if a is b**2?
+
+// output will be a boolean, which will be true if for every element in a there is a corresponding element in b that is the square of that element in a. If the element appears more than once in a, it must also have the same frequency of matches in b. if this doesn't work out, or a or b is empty or null, return false
+
+
+// ==============
 // Solution 1
 // ==============
 
-function comp(array1, array2){
-    console.log(`Starting Array 1: ${array1}`)
-    console.log(`Starting Array 2: ${array2}`)
-    
-    // if (myStr === null || myStr.trim() === "") {
-    //     console.log("This is an empty string!");
-    // } else {
-    //     console.log("This is not an empty string!");
-    // }
-    
-    let i = 0
-    if((array1 === null && array2 === null) || (array1.length === 0 && array2.length === 0)) {
-        return true
-    } else if(array1 === null || array2 === null || array1.length === 0 || array2.length === 0) {
+function comp(array1, array2) {
+    if (!(array1 && array2)) {
+        // if either array1 or array2 are falsy values (e.g. null or undefined)
         return false
-    } else {     
-        array1 = array1.map(a => a*a)
-        console.log(`Squared Array 1: ${array1}`)
-        while(i < array1.length) {
-            if (array1.includes(array2[i]) && array1.filter((a) => (a === array1[i])).length === array2.filter((a) => (a === array2[i])).length) {
-                console.log(`${array1.includes(array2[i])} at index ${i} of array2`)
-                i++
-            } else {
-                console.log(`${array1.includes(array2[i])} at index ${i} of array2`)
-                return false
-                break
-            }
-            return true
+    }
+    // sort arrays from largest to smallest so easier to evaluate one element at a time
+    array1.sort((a, b) => a - b)
+    array2.sort((a, b) => a - b)
+
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i]**2 !== array2[i]) {
+            // if array1 ever has an element that doesn't directly match one in b squared, return false
+            return false
         }
     }
+    // if successfully got through all of this and never returned false, return true
+    return true
 }
 
-// need to revisit
 
+// ==============
+// Solution 2
+// ==============
+
+// write solution using array method every()
+
+function comp(array1, array2) {
+    if (!(array1 && array2)) {
+        return false
+    }
+    array1.sort((a, b) => a - b)
+    array2.sort((a, b) => a - b)
+    
+    return array2.every( (num, i) => num === array1[i]**2 )
+}
 
 // ==============
 // Tests
@@ -88,7 +101,7 @@ const { assert } = require('chai');
 describe("Tests", () => {
     it("test", () => {
         let a1 = [121, 144, 19, 161, 19, 144, 19, 11];
-        let a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
+        let a2 = [11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19];
         assert.isTrue(comp(a1, a2));
     });
 });
