@@ -53,6 +53,27 @@ function findOdd(A) {
 
 
 // ==============
+// Solution 2
+// ==============
+
+// input will be an integer array, where only one integer appears an odd number of times. no other funny business
+// output will be the integer that appears an odd number of times.
+
+function findOdd(arr) {
+  // whenever I think of an array that has conditional requirements, I think of filter
+  // loop through the array and check if filtering the array by each element results in an even length or an odd length
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.filter(num => num === arr[i]).length % 2 === 1) {
+      return arr[i]
+    }
+  }
+
+  // not the most efficient. ideally we want to go through each unique item. (Set?)
+  // let unique = new Set(arr)
+}
+
+
+// ==============
 // Tests
 // ==============
 
