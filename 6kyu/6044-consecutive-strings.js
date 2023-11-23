@@ -30,9 +30,9 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
-function longestConsec(strarr, k) {
-  // your code
-}
+// function longestConsec(strarr, k) {
+//   // your code
+// }
 
 
 // ==============
@@ -51,20 +51,22 @@ function longestConsec(strarr, k) {
   // if k is more than length of array, return ""
   // if k is less than 1, return "" 
   let longest = ""
-  let current = ""
-  for (let i = 0; i < strarr.length - k; i++) {
-    current = strarr[i].concat(...strarr.slice(i, k - 1))
+
+  if (k > strarr.length || k < 1) return longest
+
+  for (let i = 0; i <= strarr.length - k; i++) {
+    let current = strarr.slice(i, i + k).join("");
     if (current.length > longest.length) {
-      longest = current
-    } 
+      longest = current;
+    }
   }
-  // loop through array from i to length of array divided by k
-  // slice array from i to k. note slice takes in start index (inclusive) and end index (non-inclusive) so arguments should be i to k - 1. 
-  // concatenate with spread operator 
-  // if concatenation length is longer than longest length, replace longest with concatenation
-  // return longest
-  return longest
+  return longest;
 }
+// loop through array from i to length of array divided by k
+// slice array from i to i + k. 
+// note slice takes in start index (inclusive) and end index (non-inclusive). slice(0,2) would return two elements, at index 0 and 1. 
+// if concatenation length is longer than longest length, replace longest with concatenation
+// return longest
 
 // need to revisit
 
