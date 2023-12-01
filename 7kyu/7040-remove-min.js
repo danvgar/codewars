@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/563cf89eb4747c5fb100001b/train/javascript
 // First Attempt - Aug 20, 2023
+// Second Attempt - Nov 30, 2023
 
 
 // =============
@@ -31,7 +32,7 @@
 
 
 // ==============
-// Solution 1
+// Solution 1 - Attempt 1
 // ==============
 
 function removeSmallest(numbers) {
@@ -41,13 +42,30 @@ function removeSmallest(numbers) {
 
   let minimum = Math.min(...numbers)
   let indexOfMin = numbers.indexOf(minimum)
-  numbers.splice(indexOfMin,1)
+  numbers.splice(indexOfMin, 1)
   console.log(numbers)
 
   return numbers
 }
 
 // need to revisit
+
+
+// ==============
+// Solution 1 - Attempt 2
+// ==============
+
+function removeSmallest(numbers) {
+  if (numbers.length === 0 || numbers.length === 1) return []
+
+  let arr = Array.from(numbers)
+
+  let minimum = Math.min(...arr)
+  let indexOfMin = arr.indexOf(minimum)
+  arr.splice(indexOfMin, 1)
+
+  return arr
+}
 
 
 // ==============
