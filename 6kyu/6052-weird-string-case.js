@@ -30,7 +30,9 @@
 // the alternating starts over at each word. the first letter of each word should be treated as index 0 and thus uppercase, and the next letter would be treated as index 1 and thus lowercase.
 
 
-
+// ==============
+// Solution 1
+// ==============
 
 function toWeirdCase(string) {
   console.log(`Input: ${string}`)
