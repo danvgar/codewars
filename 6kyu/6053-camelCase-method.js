@@ -43,7 +43,7 @@ String.prototype.camelCase = function () {
     .split(" ")
     // loop through each word -> map()
     // // for each word, use substrings to work on each part of string -> .toLowerCase(), .toUpperCase(), .substring()
-    .map((word, i) => word = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase())
+    .map((word, i) => word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase())
     // join array back into a string WITHOUT spaces -> .join("")
     .join("")
   // return string
@@ -53,7 +53,6 @@ console.log(String.camelCase("hello case", "HelloCase"))
 console.log(String.camelCase("hellocase", "Hellocase"))
 console.log(String.camelCase("aNOTHER hello case", "AnotherHelloCase"))
 console.log(String.camelCase("", ""))
-
 
 
 // ==============
