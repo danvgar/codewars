@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/5503013e34137eeeaa001648/train/javascript
 // First Attempt - Dec 31, 2023
+// Second Attempt - Jan 2, 2024
 
 
 // =============
@@ -55,7 +56,7 @@
 
 
 // ==============
-// Solution 1
+// Attempt 1
 // ==============
 
 function diamond(n) {
@@ -100,6 +101,85 @@ console.log(diamond(5), "    *\n  ***\n*****\n  ***\n    *")
 console.log(diamond(-1), null)
 
 // need to revisit
+
+
+
+// ==============
+// Attempt 2
+// ==============
+
+// Example 1: n = 3
+// halfFloor = 1
+// Output: 
+// " ", "*"       // (i = 1, space = 1, * = 1, len = 2)
+// "*", "*", "*"  // (i = 2, space = 0, * = 3, len = 3)
+// " ", "*"       // (i = 3, space = 1, * = 1, len = 2)
+
+// Example 2: n = 5
+// halfFloor = 2
+// Output: 
+// " ", " ", "*"            // (i = 1, space = 2, * = 1, len = 3)
+// " ", "*", "*", "*"       // (i = 2, space = 1, * = 3, len = 4)
+// "*", "*", "*", "*", "*"  // (i = 3, space = 0, * = 5, len = 5)
+// " ", "*", "*", "*"       // (i = -2, space = 1, * = 3, len = 4)
+// " ", " ", "*"            // (i = -1, space = 2, * = 1, len = 3)
+
+// Example 3: n = 7
+// halfFloor = 3
+// halfCeil = 4
+// Output: 
+// " ", " ", " ", "*"                 // (i = 1, space = 3, * = 1, len = 4)
+// " ", " ", "*", "*", "*", "*"       // (i = 2, space = 2, * = 3, len = 5)
+// " ", "*", "*", "*", "*", "*"       // (i = 3, space = 1, * = 5, len = 6)
+// "*", "*", "*", "*", "*", "*", "*"  // (i = 4, space = 0, * = 7, len = 7)
+// " ", "*", "*", "*", "*", "*"       // (i = -3, space = 1, * = 5, len = 6)
+// " ", " ", "*", "*", "*", "*"       // (i = -2, space = 2, * = 3, len = 5)
+// " ", " ", " ", "*"                 // (i = -1, space = 3, * = 1, len = 4)
+
+
+function diamond(n) {
+  console.log(`\nInput: ${n}`)
+  // Edge Cases: if n is even or negative, return null
+  if (n % 2 === 0 || n < 1) return null
+  if (n === 1) return "*\n"
+  // let floorHalf = floor(n/2)
+  // make empty array of length n
+  let arr = Array(n)
+  console.log(`Array before loop: ${arr}`)
+  console.log(`Array length before loop: ${arr.length}`)
+
+
+  let halfFloor = Math.floor(n / 2)
+  let halfCeil = Math.ceil(n / 2)
+  let stringLen = n - halfFloor
+
+  for (let i = 1; i < halfCeil; i++) {
+    console.log(`Start of index ${i}`)
+    arr[i] = "*".repeat(2 * i - 1).padStart(stringLen, " ")
+    console.log(`Element at index ${i} after asterisk task: ${arr[i]}`)
+    if (arr.length > 1) {
+      arr[-i] = arr[i]
+    }
+    stringLen++
+  }
+  console.log(`Array after loop: ${arr}`)
+
+  // 
+  // Optimization: Start and end of array will always be a singl asterisk.
+  // Optimization: middle index of array will always be * repeated n times. 
+  // Optimization: second half of array does same thing as first but reversed
+
+  // return array joined by "\n" character
+  // even an array of length 1 needs to end in a \n
+  return arr.join("\n") + "\n"
+}
+
+console.log(diamond(1), "*")
+console.log(diamond(2), null)
+console.log(diamond(3), "  *\n***\n  *")
+console.log(diamond(5), "    *\n  ***\n*****\n  ***\n    *")
+console.log(diamond(-1), null)
+
 
 // ==============
 // Tests
