@@ -1,6 +1,6 @@
 // https://www.codewars.com/kata/53da3dbb4a5168369a0000fe
 // First Attempt - Mar 2, 2023
-// Refactoring - Mar 3, 20233
+// Refactoring - Mar 3, 2023
 
 // =============
 // Problem
