@@ -74,7 +74,7 @@ var maxSequence = function (arr) {
   // Challenge: How would we also ensure we return the indices of the subarray that achieved this maximum?
 
   console.log(`Final Max: ${finalMax}`)
-  console.log(`Final Array: ${finalArr}`)
+  // console.log(`Final Array: ${finalArr}`)
   // return finalMax
   return finalMax
 }
