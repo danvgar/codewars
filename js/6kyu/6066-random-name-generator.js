@@ -31,6 +31,10 @@
 //   Upper and lowercase characters are considered different
 // Edge Cases: numbers? symbols? just alphabetical upper and lowercase?
 
+// Create random number generator range
+// Create random number 6 times, push to array, convert array into string equivalent and join("")
+// Check if name exists. If it doesn't, run function again.
+
 // ==============
 // Attempt 1
 // ==============
@@ -48,7 +52,7 @@ function randomLetterGenerator(min, max) {
   //   console.log(`codepoint at a: ${"a".codePointAt()}`)
   //   console.log(`codepoint at z: ${"z".codePointAt()}`)
   //   console.log(`codepoint generated: ${codePoint}`)
-  // console.log(`letter generated: ${String.fromCodePoint(codePoint)}`);
+  //   console.log(`letter generated: ${String.fromCodePoint(codePoint)}`);
 
   return String.fromCodePoint(codePoint);
 }
@@ -57,7 +61,6 @@ function generateName() {
   let fileNameArr = [];
   let filename = "";
   do {
-    // Create random number generator range
     for (let i = 0; i < 6; i++) {
       fileNameArr.push(randomLetterGenerator(65, 122));
     }
@@ -66,9 +69,6 @@ function generateName() {
   // console.log(`\nfileNameArr: ${fileNameArr}`);
   // console.log(`filename: ${filename}`);
   // console.log(`filename.length: ${filename.length}`);
-
-  // Create random number 6 times, push to array, convert array into string equivalent and join("")
-  // Check if name exists. If it doesn't, run function again.
 
   return filename;
 }
