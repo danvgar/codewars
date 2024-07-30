@@ -11,9 +11,9 @@
 
 // Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
 
-function getAge(inputString) {
+// function getAge(inputString) {
   // return the girl's correct age as an integer. Happy coding :)
-}
+// }
 
 // ==============
 // Solution 1
