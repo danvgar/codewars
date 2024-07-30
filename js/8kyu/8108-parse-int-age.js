@@ -19,17 +19,17 @@ function getAge(inputString) {
 // Solution 1
 // ==============
 
-// Input: Two arguments as string: animal name and dish name.
-
-// Output: Return true or false based on whether the dish starts and ends with same letters as animal's name.
-
-// Edge-cases:
-// Will arguments always be strings? Will there always be two arguments? Any funny business (null, NaN, etc)?
-// Strings always lowercase, at least two letters, may have hyphens or spaces, no white space at ends of string. No numerals, symbols, etc.
+// Input: a string in the form of "x years old" for numbers 0 and 2-9, or "x year old" for number 1, where x is an integer from 0-9.
+// Edge-Cases: input will always be a string. x will always be a positive single-digit integer.
+// Output: an integer representing the age x from the string
 
 function getAge(inputString) {
-  // return the girl's correct age as an integer. Happy coding :)
+  return parseInt(inputString[0])
 }
+
+console.log(getAge("5 years old"), 5)
+console.log(getAge("1 year old"), 1)
+console.log(getAge("0 years old"), 0)
 
 // ==============
 // Tests
