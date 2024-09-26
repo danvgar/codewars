@@ -1,5 +1,6 @@
 // https://www.codewars.com/kata/56cd44e1aa4ac7879200010b/train/javascript
 // First Attempt - May 25, 2023
+// Second Attempt - Sept 26, 2024
 
 
 // =============
@@ -25,11 +26,22 @@
 
 
 // ==============
-// Solution 1
+// Attempt 1
 // ==============
 
 String.prototype.isUpperCase = function() {
   return this.toUpperCase === this 
+}
+
+// revisit
+
+
+// ==============
+// Attempt 2
+// ==============
+
+String.prototype.isUpperCase = function() {
+  return this.toString() === this.toString().toUpperCase()
 }
 
 // revisit
