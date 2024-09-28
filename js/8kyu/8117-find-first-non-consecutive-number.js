@@ -42,8 +42,8 @@ function firstNonConsecutive(arr) {
   // Filter array where arr[i] !== arr[i + 1] - 1
   // Return integer in array
   console.log(arr)
-  for (let i = 0; i < arr.length; i++) {
-    if(arr[i] !== arr[i + 1] - 1 && arr[i + 1] ) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if(arr[i] !== arr[i + 1] - 1) {
       return arr[i + 1]
     }
   }
