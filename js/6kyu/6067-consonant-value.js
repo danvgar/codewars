@@ -47,7 +47,11 @@ function solve(str) {
   ALPHABET.forEach( (letter, i) => valMap.set(letter, i+1));
 
   // Create filtered string
-  let filteredStr = str.split("").filter( (char) => !VOWELS.includes(char))
+  // let filteredStr = str.split("").filter( (char) => !VOWELS.includes(char))
+  let filteredStr = [str]
+  for(const vowel of VOWELS) {
+    filteredStr = filteredStr.map(substr => substr.split(vowel))
+  }
   console.log("Filtered String: ", filteredStr)
 
   // Replace each letter of filtered string with it's value from the map
