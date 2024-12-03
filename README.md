@@ -13,6 +13,7 @@ Repository of daily [Codewars](https://www.codewars.com/) challenges for [danvga
 ## How It's Made:
 
 **Tech Used:** </br><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" height="25" width="25"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" height="25" width="25"/>
 
 Challenge to push at least one solution daily, while frequently going back to refactor and add optimized algorithms into daily [Anki flashcards](https://apps.ankiweb.net/) bank.
 
